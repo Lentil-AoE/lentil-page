@@ -15,24 +15,23 @@ const mapDraft = [
     team2.maps[2], 
 ]
 
-// const mapCivsTeam1 = () => team1.civs.map(civ => {
-//     return (
-//         <div className='civ-div'>
-//             <div className={`civ ${civ.toLowerCase()}`}></div>
-//             <p>{civ}</p>
-//         </div>
-//     )
-// })
-
 export const Match = () => {
     const [maps1, updateMaps] = useState(['MegaRandom']);
     const [team1CivPicks, updateTeam1CivPicks] = useState([]);
     const [team2CivPicks, updateTeam2CivPicks] = useState([]);
     document.title = 'LENTIL CUP 2'
+    
+    
+    const updateMaps1 = async map => {
+        await updateMaps([...maps1, map])
+        
+        const objDiv = document.getElementById('games');
+        objDiv.scrollTop = objDiv.scrollHeight;
+    }
 
     const mapMaps = () => mapDraft.map(map => {
         return (
-            <div className='map hover' onClick={() => updateMaps([...maps1, map])}>
+            <div className='map hover' onClick={() => updateMaps1(map)}>
                 <img src={megarandomImg} alt="" />
                 <p>{map}</p>
             </div>
@@ -44,7 +43,7 @@ export const Match = () => {
                 <h2>{`Game ${i + 1}`}</h2>
                 <div className='civ-div'>
                     <div className={`civ ${team1CivPicks[i] && team1CivPicks[i].toLowerCase()}`}>{team1CivPicks[i] ? '' : '???'}</div>
-                    <p>{team1CivPicks[i]}</p>
+                    <p>{team1CivPicks[i] ? team1CivPicks[i] : 'Pending'}</p>
                 </div>
             </div>
         )
@@ -54,7 +53,7 @@ export const Match = () => {
             <div className='game-right'>
                 <div className='civ-div'>
                     <div className={`civ ${team2CivPicks[i] && team2CivPicks[i].toLowerCase()}`}>{team2CivPicks[i] ? '' : '???'}</div>
-                    <p>{team2CivPicks[i]}</p>
+                    <p>{team2CivPicks[i] ? team2CivPicks[i] : 'Pending'}</p>
                 </div>
                 <div className='map'>
                 <img src={megarandomImg} alt="" />
@@ -124,7 +123,7 @@ export const Match = () => {
                     {mapCivsTeam2}
                 </div>
             </div>
-            <div className='games'>
+            <div className='games' id='games'>
                 <div className="games-left left">
                     {mapGamesLeft}
                 </div>
