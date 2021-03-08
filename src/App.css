@@ -149,11 +149,15 @@ header {
   align-items: center;
   background: gray;
   background: cyan;
-  background: teal;
   background: black;
-  background-image: url('./assets/civs/vietnamese.png');
+  background: teal;
   object-fit: contain;
   background-size: 100%;
+  font-size: 2rem;
+}
+
+.vietnamese {
+  background-image: url('./assets/civs/vietnamese.png');
 }
 
 .games {
@@ -180,7 +184,7 @@ header {
 
 .game-left h2 {
   text-align: center;
-  padding: 30px;
+  padding-right: 30px;
 }
 
 .games-right .map {
