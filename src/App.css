@@ -147,10 +147,11 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
+  color: teal;
   background: teal;
   object-fit: contain;
   background-size: 100%;
-  font-size: 2rem;
+  font-size: 3.5rem;
 }
 
 .vietnamese {
@@ -232,10 +233,11 @@ header {
 
 .score {
   padding: 25px;
-  font-size: 3.5rem;
+  font-size: 5.5rem;
   display: flex;
   align-items: center;
   color: teal;
+  font-family: monospace;
 }
 
 img {

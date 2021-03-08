@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import megarandomImg from './assets/maps/megarandom.png';
 import wolf from './assets/teams/wolf.png';
 import hawk from './assets/teams/hawk.png';
@@ -19,6 +19,48 @@ export const Match = () => {
     const [maps1, updateMaps] = useState(['MegaRandom']);
     const [team1CivPicks, updateTeam1CivPicks] = useState([]);
     const [team2CivPicks, updateTeam2CivPicks] = useState([]);
+    const [result, updateResult] = useState({
+        team1: [],
+        team2: []
+    })
+    const [score, updateScore] = useState([0,0])
+
+    const returnCheck = (x) => {
+        const bank = {
+            W: <i class="fas fa-check"></i>,
+            L: '❌'
+        }
+        return bank[x] || ''
+    }
+
+    const recordWin = (team, i) => {
+        if(!team1CivPicks[i] || !team2CivPicks[i]){
+            return 
+        }
+
+        const newResult = Object.assign(result);
+        const newScore = Object.assign(score)
+
+        if (team === 'team1'){
+            newResult.team1.splice(i, 1, 'W')
+            newResult.team2.splice(i, 1, 'L')
+            newScore[0] = newResult.team1.filter(score => score === 'W').length
+            newScore[1] = newResult.team2.filter(score => score === 'W').length
+        }
+
+        if (team === 'team2'){
+            newResult.team1.splice(i, 1, 'L')
+            newResult.team2.splice(i, 1, 'W')
+            newScore[0] = newResult.team1.filter(score => score === 'W').length
+            newScore[1] = newResult.team2.filter(score => score === 'W').length
+        }
+
+        console.log(newScore)
+
+        updateResult({...newResult});
+        updateScore([...newScore])
+    }
+
     document.title = 'LENTIL CUP 2'
     
     
@@ -43,7 +85,11 @@ export const Match = () => {
             <div className='game-left'>
                 <h2>{`Game ${i + 1}`}</h2>
                 <div className='civ-div'>
-                    <div className={`civ ${team1CivPicks[i] && team1CivPicks[i].toLowerCase()}`}>{team1CivPicks[i] ? '' : '???'}</div>
+                    <div 
+                    className={`civ ${team1CivPicks[i] && team1CivPicks[i].toLowerCase()} hover`}
+                    onClick={() => recordWin('team1', i)}>
+                        {team1CivPicks[i] ? returnCheck(result.team1[i]) : '❔'}
+                    </div>
                     <p>{team1CivPicks[i] ? team1CivPicks[i] : 'Pending'}</p>
                 </div>
             </div>
@@ -53,7 +99,11 @@ export const Match = () => {
     const mapGamesRight = maps1.map((_, i) => (
             <div className='game-right'>
                 <div className='civ-div'>
-                    <div className={`civ ${team2CivPicks[i] && team2CivPicks[i].toLowerCase()}`}>{team2CivPicks[i] ? '' : '???'}</div>
+                    <div className={`civ ${team2CivPicks[i] && team2CivPicks[i].toLowerCase()} hover`}
+                    onClick={() => recordWin('team2', i)}>
+                        {team2CivPicks[i] ? returnCheck(result.team2[i]) : '❔'}
+                        
+                    </div>
                     <p>{team2CivPicks[i] ? team2CivPicks[i] : 'Pending'}</p>
                 </div>
                 <div className='map'>
@@ -111,10 +161,10 @@ export const Match = () => {
                             <p>Player 2</p>
                         </div>
                     </div>
-                    <h1 className='score'>0</h1>
+                    <h1 className='score'>{score[0]}</h1>
                 </div>
                 <div className='team team-right right'>
-                    <h1 className='score'>0</h1>
+                    <h1 className='score'>{score[1]}</h1>
                     <div className='flex flex-right'>
                         <div className='team-names'>
                             <h1>{team2.name}</h1>
