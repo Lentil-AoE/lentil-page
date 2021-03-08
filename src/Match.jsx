@@ -22,16 +22,17 @@ export const Match = () => {
     document.title = 'LENTIL CUP 2'
     
     
-    const updateMaps1 = async map => {
+    const updateMaps1 = async (map, i) => {
+        if (team1CivPicks[i] && team1CivPicks[i]){
         await updateMaps([...maps1, map])
         
         const objDiv = document.getElementById('games');
-        objDiv.scrollTop = objDiv.scrollHeight;
+        objDiv.scrollTop = objDiv.scrollHeight;}
     }
 
-    const mapMaps = () => mapDraft.map(map => {
+    const mapMaps = () => mapDraft.map((map, i) => {
         return (
-            <div className='map hover' onClick={() => updateMaps1(map)}>
+            <div className='map hover' onClick={() => updateMaps1(map, maps1.length - 1)}>
                 <img src={megarandomImg} alt="" />
                 <p>{map}</p>
             </div>
@@ -63,17 +64,29 @@ export const Match = () => {
         )
     )
 
+    const updateCivPicks = (team, civ, i, j) => {
+        if (maps1[i] && maps1[j])
+
+        if (team === 'team1'){
+            updateTeam1CivPicks([...team1CivPicks, civ])
+        }
+
+        if (team === 'team2'){
+            updateTeam2CivPicks([...team2CivPicks, civ])
+        }
+    }
+
     const mapCivsTeam1 = team1.civs.map(civ => (
-            <div className='civ-div' onClick={() => updateTeam1CivPicks([...team1CivPicks, civ])}>
-                <div className={`civ ${civ.toLowerCase()}`}></div>
+            <div className='civ-div' onClick={() => updateCivPicks('team1', civ, team1CivPicks.length, team2CivPicks.length)}>
+                <div className={`civ ${civ.toLowerCase()} hover`}></div>
                 <p>{civ}</p>
             </div>
         )
     )
 
     const mapCivsTeam2 = team2.civs.map(civ => (
-        <div className='civ-div' onClick={() => updateTeam2CivPicks([...team2CivPicks, civ])}>
-            <div className={`civ ${civ.toLowerCase()}`}></div>
+        <div className='civ-div' onClick={() => updateCivPicks('team2', civ, team1CivPicks.length, team2CivPicks.length)}>
+            <div className={`civ ${civ.toLowerCase()} hover`}></div>
             <p>{civ}</p>
         </div>
     )
