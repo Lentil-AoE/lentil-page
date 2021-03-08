@@ -114,20 +114,20 @@ export const Match = () => {
         )
     )
 
-    const updateCivPicks = (team, civ, i, j) => {
-        if (maps1[i] && maps1[j])
+    const updateCivPicks = (team, civ, i) => {
+        if (maps1[i]){
+            if (team === 'team1'){
+                updateTeam1CivPicks([...team1CivPicks, civ])
+            }
 
-        if (team === 'team1'){
-            updateTeam1CivPicks([...team1CivPicks, civ])
-        }
-
-        if (team === 'team2'){
-            updateTeam2CivPicks([...team2CivPicks, civ])
+            if (team === 'team2'){
+                updateTeam2CivPicks([...team2CivPicks, civ])
+            }
         }
     }
 
     const mapCivsTeam1 = team1.civs.map(civ => (
-            <div className='civ-div' onClick={() => updateCivPicks('team1', civ, team1CivPicks.length, team2CivPicks.length)}>
+            <div className='civ-div' onClick={() => updateCivPicks('team1', civ, team1CivPicks.length)}>
                 <div className={`civ ${civ.toLowerCase()} hover`}></div>
                 <p>{civ}</p>
             </div>
@@ -135,7 +135,7 @@ export const Match = () => {
     )
 
     const mapCivsTeam2 = team2.civs.map(civ => (
-        <div className='civ-div' onClick={() => updateCivPicks('team2', civ, team1CivPicks.length, team2CivPicks.length)}>
+        <div className='civ-div' onClick={() => updateCivPicks('team2', civ, team2CivPicks.length)}>
             <div className={`civ ${civ.toLowerCase()} hover`}></div>
             <p>{civ}</p>
         </div>
