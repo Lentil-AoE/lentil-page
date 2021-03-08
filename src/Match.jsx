@@ -1,21 +1,31 @@
 import React from 'react';
+import megarandom from './assets/maps/megarandom.png';
+import wolf from './assets/teams/wolf.png';
+import hawk from './assets/teams/hawk.png';
 
-const maps = [1,2,3,4,5,6,7];
+const maps = [1, 2, 3, 4, 5, 6, 7];
 
 const mapMaps = () => maps.map(map => {
-    return <div className="map">{map}</div>
+    return (
+        <div className='map'>
+            <img src={megarandom} alt="" />
+            <p>MegaRandom</p>
+        </div>
+    )
 });
 
-const civs = [1,2,3,4,5,6,7,8,9,10];
+const civs = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
 const mapCivs = () => civs.map(civ => {
-        return <div className='civ'>{civ}</div>
-    })
+    return (
+        <div className='civ-div'>
+            <div className='civ'></div>
+            <p>Vietnamese</p>
+        </div>
+    )
+})
 
 const games = [
-    {
-        map: 'Mega Random'
-    },
     {
         map: 'Bog Socatra'
     },
@@ -24,6 +34,10 @@ const games = [
     },
     {
         map: 'Reverse Arena'
+    },
+    {
+        map: 'Mega Random',
+        image: megarandom
     },
     {
         map: 'Reverse Arena'
@@ -40,7 +54,10 @@ const mapGamesLeft = () => games.map((game, i) => {
     return (
         <div className='game-left'>
             <h2>{`Game ${i + 1}`}</h2>
-            <div className="civ"></div>
+            <div className='civ-div'>
+                <div className='civ'></div>
+                <p>Vietnamese</p>
+            </div>
         </div>
     )
 })
@@ -48,8 +65,14 @@ const mapGamesLeft = () => games.map((game, i) => {
 const mapGamesRight = () => games.map(game => {
     return (
         <div className='game-right'>
-            <div className="civ"></div>
-            <h2>{game.map}</h2>
+            <div className='civ-div'>
+                <div className='civ'></div>
+                <p>Vietnamese</p>
+            </div>
+            <div className='map'>
+            <img src={megarandom} alt="" />
+            <p>MegaRandom</p>
+        </div>
         </div>
     )
 })
@@ -62,12 +85,12 @@ export const Match = () => {
                 <h4>current prize pool: $0</h4>
             </header>
             <div className="match-title">
-                <h3>match A - bo7</h3>
+                <h3>RICE BRACKET - bo7</h3>
             </div>
             <div className='teams'>
                 <div className='team team-left left'>
                     <div className='flex flex-left'>
-                        <div className="civ"></div>
+                        <img src={wolf} alt='wolf' />
                         <h1>Angry Wolf</h1>
                     </div>
                     <h1 className='score'>0</h1>
@@ -76,7 +99,7 @@ export const Match = () => {
                     <h1 className='score'>0</h1>
                     <div className='flex flex-right'>
                         <h1>Sad Hawk</h1>
-                        <div className="civ"></div>
+                        <img src={hawk} alt='hawk' />
                     </div>
                 </div>
             </div>
