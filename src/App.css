@@ -244,8 +244,8 @@ img {
 
 .flex-left img, .flex-right img {
   height: 70px;
-  width: 75px;
-  border-radius: 50px;
+  width: 100px;
+  border-radius: 5px;
 }
 
 .flex-left img {

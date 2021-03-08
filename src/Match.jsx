@@ -78,6 +78,7 @@ const mapGamesRight = () => games.map(game => {
 })
 
 export const Match = () => {
+    document.title = 'LENTIL CUP 2'
     return (
         <div>
             <header>
@@ -91,14 +92,14 @@ export const Match = () => {
                 <div className='team team-left left'>
                     <div className='flex flex-left'>
                         <img src={wolf} alt='wolf' />
-                        <h1>Angry Wolf</h1>
+                        <h1>Pizza Wolf</h1>
                     </div>
                     <h1 className='score'>0</h1>
                 </div>
                 <div className='team team-right right'>
                     <h1 className='score'>0</h1>
                     <div className='flex flex-right'>
-                        <h1>Sad Hawk</h1>
+                        <h1>Pretzel Hawk</h1>
                         <img src={hawk} alt='hawk' />
                     </div>
                 </div>
