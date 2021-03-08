@@ -61,12 +61,23 @@ export const Match = () => {
                 <h2>LENTIL CUP 2</h2>
                 <h4>current prize pool: $0</h4>
             </header>
+            <div className="match-title">
+                <h3>match A - bo7</h3>
+            </div>
             <div className='teams'>
                 <div className='team team-left left'>
-                    <h1>Angry Wolf</h1>
+                    <div className='flex flex-left'>
+                        <div className="civ"></div>
+                        <h1>Angry Wolf</h1>
+                    </div>
+                    <h1 className='score'>0</h1>
                 </div>
-                <div className='team team-left right'>
-                    <h1>Sad Hawk</h1>
+                <div className='team team-right right'>
+                    <h1 className='score'>0</h1>
+                    <div className='flex flex-right'>
+                        <h1>Sad Hawk</h1>
+                        <div className="civ"></div>
+                    </div>
                 </div>
             </div>
             <div className='maps'>
