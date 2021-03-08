@@ -4,6 +4,7 @@ const vietnamese = 'Vietnamese';
 const bogSocratra = 'BogSocratra';
 const reverseArena = 'ReverseArena';
 const ponds = 'Ponds';
+const arabia = 'Arabia';
 
 export const team1 = {
     name: pizzaWolf,
@@ -24,7 +25,7 @@ export const team1 = {
 
 export const team2 = {
     name: pretzelHawk,
-    maps: [reverseArena, reverseArena, reverseArena],
+    maps: [arabia, 'Map 1', 'Map 2'],
     civs: [
         vietnamese,
         vietnamese,

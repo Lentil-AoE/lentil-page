@@ -5,7 +5,7 @@ import hawk from './assets/teams/hawk.png';
 import {team1, team2} from './const/match-a-draft';
 
 const megarandom = 'MegaRandom';
-const maps = [
+const mapDraft = [
     team1.maps[2], 
     team1.maps[1], 
     team1.maps[0], 
@@ -15,56 +15,71 @@ const maps = [
     team2.maps[2], 
 ]
 
-const mapMaps = () => maps.map(map => {
-    return (
-        <div className='map'>
-            <img src={megarandomImg} alt="" />
-            <p>{map}</p>
-        </div>
-    )
-});
+// const mapCivsTeam1 = () => team1.civs.map(civ => {
+//     return (
+//         <div className='civ-div'>
+//             <div className={`civ ${civ.toLowerCase()}`}></div>
+//             <p>{civ}</p>
+//         </div>
+//     )
+// })
 
-const mapCivsTeam1 = () => team1.civs.map(civ => {
-    return (
-        <div className='civ-div'>
+export const Match = () => {
+    const [maps1, updateMaps] = useState(['MegaRandom']);
+    const [team1CivPicks, updateTeam1CivPicks] = useState([]);
+    const [team2CivPicks, updateTeam2CivPicks] = useState([]);
+    document.title = 'LENTIL CUP 2'
+
+    const mapMaps = () => mapDraft.map(map => {
+        return (
+            <div className='map hover' onClick={() => updateMaps([...maps1, map])}>
+                <img src={megarandomImg} alt="" />
+                <p>{map}</p>
+            </div>
+        )
+    });
+    
+    const mapGamesLeft = maps1.map((_, i) => (
+            <div className='game-left'>
+                <h2>{`Game ${i + 1}`}</h2>
+                <div className='civ-div'>
+                    <div className={`civ ${team1CivPicks[i] && team1CivPicks[i].toLowerCase()}`}>{team1CivPicks[i] ? '' : '???'}</div>
+                    <p>{team1CivPicks[i]}</p>
+                </div>
+            </div>
+        )
+    )
+    
+    const mapGamesRight = maps1.map((_, i) => (
+            <div className='game-right'>
+                <div className='civ-div'>
+                    <div className={`civ ${team2CivPicks[i] && team2CivPicks[i].toLowerCase()}`}>{team2CivPicks[i] ? '' : '???'}</div>
+                    <p>{team2CivPicks[i]}</p>
+                </div>
+                <div className='map'>
+                <img src={megarandomImg} alt="" />
+                <p>{maps1[i]}</p>
+            </div>
+            </div>
+        )
+    )
+
+    const mapCivsTeam1 = team1.civs.map(civ => (
+            <div className='civ-div' onClick={() => updateTeam1CivPicks([...team1CivPicks, civ])}>
+                <div className={`civ ${civ.toLowerCase()}`}></div>
+                <p>{civ}</p>
+            </div>
+        )
+    )
+
+    const mapCivsTeam2 = team2.civs.map(civ => (
+        <div className='civ-div' onClick={() => updateTeam2CivPicks([...team2CivPicks, civ])}>
             <div className={`civ ${civ.toLowerCase()}`}></div>
             <p>{civ}</p>
         </div>
     )
-})
+)
 
-export const Match = () => {
-    const [maps, updateMaps] = useState([megarandom]);
-    const [team1CivPicks, updateTeam1CivPicks] = useState([]);
-    const [team2CivPicks, updateTeam2CivPicks] = useState([]);
-    
-    const mapGamesLeft = () => maps.map((game, i) => {
-        return (
-            <div className='game-left'>
-                <h2>{`Game ${i + 1}`}</h2>
-                <div className='civ-div'>
-                    <div className='civ'>{team1CivPicks[i] ? '' : '???'}</div>
-                    <p>{game.team1Civ}</p>
-                </div>
-            </div>
-        )
-    })
-    
-    const mapGamesRight = () => maps.map((game, i) => {
-        return (
-            <div className='game-right'>
-                <div className='civ-div'>
-                    <div className='civ'>{team2CivPicks[i] ? '' : '???'}</div>
-                    <p>{team2CivPicks[1]}</p>
-                </div>
-                <div className='map'>
-                <img src={megarandomImg} alt="" />
-                <p>{maps[i]}</p>
-            </div>
-            </div>
-        )
-    })
-    document.title = 'LENTIL CUP 2'
     return (
         <div>
             <header>
@@ -103,18 +118,18 @@ export const Match = () => {
             </div>
             <div className='civs'>
                 <div className="civ-picks left">
-                    {mapCivsTeam1()}
+                    {mapCivsTeam1}
                 </div>
                 <div className="civ-picks right">
-                    {mapCivsTeam1()}
+                    {mapCivsTeam2}
                 </div>
             </div>
             <div className='games'>
                 <div className="games-left left">
-                    {mapGamesLeft()}
+                    {mapGamesLeft}
                 </div>
                 <div className="games-right right">
-                    {mapGamesRight()}
+                    {mapGamesRight}
                 </div>
             </div>
         </div>
