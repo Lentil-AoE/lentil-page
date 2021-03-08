@@ -22,6 +22,7 @@ section {
 
 .section-right {
   background: #50d8d7;
+  color: rgb(183,62,246);
 }
 
 section h1 {
@@ -49,16 +50,152 @@ section h1 {
 }
 
 .btn-right {
-  border: s2px olid transparent;
+  border: 2px solid transparent;
+  color: white;
 }
 
 .btn-left:hover {
-  background: rgba(255,255,255,.5);
+  background: rgba(255,255,255,.75);
   border: 1px solid gray;
 }
 
 .btn-right:hover {
-  background-color: rgb(183,62,246);
-  border: 2px solid black;
   font-weight: 500;
+  background: white;
+  color: black;
+  color: rgb(183,62,246);
+}
+
+/* match */
+
+header {
+  display: flex;
+  justify-content: center;
+  height: 50px;
+  align-items: center;
+  flex-direction: column;
+  /* background: white; */
+  margin-bottom: 15px;
+  color: white;
+  color: lightgray;
+}
+
+.teams  {
+  margin: 0 auto;
+  width: 1000px;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.team {
+  width: 100%;
+  height: 85px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.maps {
+  width: 1000px;
+  height: 125px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  background: gray;
+}
+
+.map {
+  border: 1px solid gray;
+  height: 100px;
+  width: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  background: lightgray;
+}
+
+.civs {
+  width: 1000px;
+  margin: 0 auto;
+  display: flex;
+}
+
+.civ-picks {
+  padding: 5px;
+  width: 500px;
+  display: flex;
+  box-sizing: border-box;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.civ {
+  height: 75px;
+  width: 75px;
+  margin:8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: gray;
+}
+
+.games {
+  margin: 0 auto;
+  width: 1000px;
+  display: flex;
+  overflow-y: scroll;
+  /* max-height: 400px; */
+  max-height: calc(100vh - 490px);
+  border-top: 2px solid gray;
+}
+
+.games-left, .games-right {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.games-left {
+  align-items: flex-end;
+}
+
+.game-left h2 {
+  text-align: center;
+  padding: 20px;
+}
+
+.games-right h2 {
+  padding-left: 20px;
+  max-width: 100px;
+}
+
+.game-left, .game-right {
+  display: flex;
+  align-items: center;
+  background: lightgray;
+  width: 250px;
+  margin: 10px 15px;
+  padding: 5px;
+  box-sizing: border-box;
+}
+
+.game-left {
+  justify-content: flex-end;
+}
+
+.games::-webkit-scrollbar {
+  display: none;
+}
+
+.left {
+  background: pink;
+}
+
+.right {
+  background: plum;
 }

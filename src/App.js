@@ -1,10 +1,11 @@
 import './Reset.css';
 import './App.css';
-import {Home} from './Home';
+// import {Home} from './Home';
+import {Match} from './Match';
 
 function App() {
   return (
-    <Home/>
+    <Match/>
   );
 }
 
