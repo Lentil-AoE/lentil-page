@@ -27,26 +27,26 @@ const mapCivs = () => civs.map(civ => {
 
 const games = [
     {
-        map: 'Bog Socatra'
+        map: 'BogSocatra'
     },
     {
         map: 'Ponds'
     },
     {
-        map: 'Reverse Arena'
+        map: 'ReverseArena'
     },
     {
-        map: 'Mega Random',
+        map: 'MegaRandom',
         image: megarandom
     },
     {
-        map: 'Reverse Arena'
+        map: 'ReverseArena'
     },
     {
-        map: 'Reverse Arena'
+        map: 'ReverseArena'
     },
     {
-        map: 'Reverse Arena'
+        map: 'ReverseArena'
     }
 ];
 
@@ -71,7 +71,7 @@ const mapGamesRight = () => games.map(game => {
             </div>
             <div className='map'>
             <img src={megarandom} alt="" />
-            <p>MegaRandom</p>
+            <p>{game.map}</p>
         </div>
         </div>
     )
@@ -86,20 +86,28 @@ export const Match = () => {
                 <h4>current prize pool: $0</h4>
             </header>
             <div className="match-title">
-                <h3>RICE BRACKET - bo7</h3>
+                <h3>RICE BRACKET - best of 7</h3>
             </div>
             <div className='teams'>
                 <div className='team team-left left'>
                     <div className='flex flex-left'>
                         <img src={wolf} alt='wolf' />
-                        <h1>Pizza Wolf</h1>
+                        <div className='team-names'>
+                            <h1>PizzaWolf</h1>
+                            <p>Player 1</p>
+                            <p>Player 2</p>
+                        </div>
                     </div>
                     <h1 className='score'>0</h1>
                 </div>
                 <div className='team team-right right'>
                     <h1 className='score'>0</h1>
                     <div className='flex flex-right'>
-                        <h1>Pretzel Hawk</h1>
+                        <div className='team-names'>
+                            <h1>PretzelHawk</h1>
+                            <p>Player 1</p>
+                            <p>Player 2</p>
+                        </div>
                         <img src={hawk} alt='hawk' />
                     </div>
                 </div>
