@@ -1,5 +1,4 @@
-import React, {useState, useEffect} from 'react';
-import megarandomImg from './assets/maps/megarandom.png';
+import React, {useState} from 'react';
 import wolf from './assets/teams/wolf.png';
 import hawk from './assets/teams/hawk.png';
 import {team1, team2} from './const/match-a-draft';
@@ -62,10 +61,13 @@ export const Match = () => {
     }
 
     document.title = 'LENTIL CUP 2'
-    
+
+    const [mapsUsed, updateMapsUsed] = useState(['MegaRandom'])
+    const containsMap = mapName => mapsUsed.find(map => map === mapName)
     
     const updateMaps1 = async (map, i) => {
         if (team1CivPicks[i] && team1CivPicks[i]){
+        updateMapsUsed([...mapsUsed, map])
         await updateMaps([...maps1, map])
         
         const objDiv = document.getElementById('games');
@@ -74,8 +76,11 @@ export const Match = () => {
 
     const mapMaps = () => mapDraft.map((map, i) => {
         return (
-            <div className='map hover' onClick={() => updateMaps1(map, maps1.length - 1)}>
-                <img src={megarandomImg} alt="" />
+            <div 
+            className='hover map'
+            onClick={() => updateMaps1(map, maps1.length - 1)}
+            >
+                <div className='test'>{containsMap(map) && '❌'}</div>
                 <p>{map}</p>
             </div>
         )
@@ -107,7 +112,7 @@ export const Match = () => {
                     <p>{team2CivPicks[i] ? team2CivPicks[i] : 'Pending'}</p>
                 </div>
                 <div className='map'>
-                <img src={megarandomImg} alt="" />
+                <div className="test"></div>
                 <p>{maps1[i]}</p>
             </div>
             </div>
