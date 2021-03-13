@@ -154,10 +154,6 @@ header {
   font-size: 3.5rem;
 }
 
-.vietnamese {
-  background-image: url('./assets/civs/vietnamese.png');
-}
-
 .games {
   margin: 0 auto;
   width: 1000px;

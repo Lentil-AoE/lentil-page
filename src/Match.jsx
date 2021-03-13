@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import './style/Civs.css';
 import wolf from './assets/teams/wolf.png';
 import hawk from './assets/teams/hawk.png';
 import {team1, team2} from './const/match-a-draft';
@@ -66,6 +67,9 @@ export const Match = () => {
     const containsMap = mapName => mapsUsed.find(map => map === mapName)
     
     const updateMaps1 = async (map, i) => {
+        if(containsMap(map)){
+            return
+        }
         if (team1CivPicks[i] && team1CivPicks[i]){
         updateMapsUsed([...mapsUsed, map])
         await updateMaps([...maps1, map])
@@ -91,7 +95,7 @@ export const Match = () => {
                 <h2>{`Game ${i + 1}`}</h2>
                 <div className='civ-div'>
                     <div 
-                    className={`civ ${team1CivPicks[i] && team1CivPicks[i].toLowerCase()} hover`}
+                    className={`civ ${team1CivPicks[i] && team1CivPicks[i]} hover`}
                     onClick={() => recordWin('team1', i)}>
                         {team1CivPicks[i] ? returnCheck(result.team1[i]) : '❔'}
                     </div>
@@ -104,7 +108,7 @@ export const Match = () => {
     const mapGamesRight = maps1.map((_, i) => (
             <div className='game-right'>
                 <div className='civ-div'>
-                    <div className={`civ ${team2CivPicks[i] && team2CivPicks[i].toLowerCase()} hover`}
+                    <div className={`civ ${team2CivPicks[i] && team2CivPicks[i]} hover`}
                     onClick={() => recordWin('team2', i)}>
                         {team2CivPicks[i] ? returnCheck(result.team2[i]) : '❔'}
                         
@@ -119,13 +123,21 @@ export const Match = () => {
         )
     )
 
+    const [civsUsed, updateCivsUsed] = useState([]);
+    const isCivUsed = civ => civsUsed.find(el => el === civ);
+
     const updateCivPicks = (team, civ, i) => {
         if (maps1[i]){
+            if(isCivUsed(civ)){
+                return
+            }
             if (team === 'team1'){
+                updateCivsUsed([...civsUsed, civ])
                 updateTeam1CivPicks([...team1CivPicks, civ])
             }
 
             if (team === 'team2'){
+                updateCivsUsed([...civsUsed, civ])
                 updateTeam2CivPicks([...team2CivPicks, civ])
             }
         }
@@ -133,7 +145,7 @@ export const Match = () => {
 
     const mapCivsTeam1 = team1.civs.map(civ => (
             <div className='civ-div' onClick={() => updateCivPicks('team1', civ, team1CivPicks.length)}>
-                <div className={`civ ${civ.toLowerCase()} hover`}></div>
+                <div className={`civ ${civ} hover`}>{isCivUsed(civ) && '❌'}</div>
                 <p>{civ}</p>
             </div>
         )
@@ -141,7 +153,7 @@ export const Match = () => {
 
     const mapCivsTeam2 = team2.civs.map(civ => (
         <div className='civ-div' onClick={() => updateCivPicks('team2', civ, team2CivPicks.length)}>
-            <div className={`civ ${civ.toLowerCase()} hover`}></div>
+            <div className={`civ ${civ} hover`}>{isCivUsed(civ) && '❌'}</div>
             <p>{civ}</p>
         </div>
     )

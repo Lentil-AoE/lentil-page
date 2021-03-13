@@ -1,41 +1,44 @@
+import {civList} from './civs';
+
 const pizzaWolf = 'Pizza Wolf';
 const pretzelHawk = 'Pretzel Hawk';
-const vietnamese = 'Vietnamese';
 const bogSocratra = 'BogSocratra';
 const reverseArena = 'ReverseArena';
 const ponds = 'Ponds';
 const arabia = 'Arabia';
+const crochetbia = 'CrochetBia';
+const tideout = 'Tideout';
 
 export const team1 = {
     name: pizzaWolf,
     maps: [bogSocratra, ponds, reverseArena],
     civs: [
-        vietnamese,
-        vietnamese,
-        vietnamese,
-        vietnamese,
-        vietnamese,
-        vietnamese,
-        vietnamese,
-        vietnamese,
-        vietnamese,
-        vietnamese
+        civList.vietnamese,
+        civList.berbers,
+        civList.vikings,
+        civList.indians,
+        civList.bulgarians,
+        civList.khmer,
+        civList.koreans,
+        civList.lithuanians,
+        civList.mongols,
+        civList.persians
     ]
 }
 
 export const team2 = {
     name: pretzelHawk,
-    maps: [arabia, 'Map 1', 'Map 2'],
+    maps: [arabia, crochetbia, tideout],
     civs: [
-        vietnamese,
-        vietnamese,
-        vietnamese,
-        vietnamese,
-        vietnamese,
-        vietnamese,
-        vietnamese,
-        vietnamese,
-        vietnamese,
-        vietnamese
+        civList.aztecs,
+        civList.britons,
+        civList.saracens,
+        civList.portuguese,
+        civList.vietnamese,
+        civList.slavs,
+        civList.spanish,
+        civList.incas,
+        civList.japanese,
+        civList.malay
     ]
 }
