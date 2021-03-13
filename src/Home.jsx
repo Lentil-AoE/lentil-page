@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 
 export const Home = () => {
     return (
@@ -9,7 +10,9 @@ export const Home = () => {
             </section>
             <section className='section-right'>
                 <h1>Lentil Cup 2</h1> 
-                <button className='btn-big btn-right'>Enter</button>  
+                <Link to='two/match'>
+                    <button className='btn-big btn-right'>Enter</button>  
+                </Link>
             </section>
         </div>
     )

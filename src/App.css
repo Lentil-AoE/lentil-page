@@ -21,8 +21,9 @@ section {
 }
 
 .section-right {
-  background: #50d8d7;
+  /* background: #50d8d7; */
   color: rgb(183,62,246);
+  color: white;
 }
 
 section h1 {
@@ -42,6 +43,7 @@ section h1 {
   border-radius: 45px;
   font-size: 1.5rem;
   border: 1px solid transparent;
+  background: teal;
 }
 
 .btn-left {
@@ -57,23 +59,54 @@ section h1 {
 .btn-left:hover {
   background: rgba(255,255,255,.75);
   border: 1px solid gray;
+  color: gray;
 }
 
 .btn-right:hover {
   font-weight: 500;
   background: white;
-  color: rgb(183,62,246);
+  color: teal;
 }
 
 /* match */
 header {
-  display: flex;
-  justify-content: center;
-  height: 65px;
-  align-items: center;
-  flex-direction: column;
   color: teal;
   padding: 5px 0;
+  height: 65px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.logo {
+  height: 50px;
+  width: 50px;
+  background: url('./assets/lentil-wallpaper.jpg');
+  background: rgba(255,255,255,.5);
+  background-size: 250px;
+  margin: 5px;
+  border-radius: 100%;
+  font-size: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: teal;
+}
+
+.logo:hover {
+  cursor: pointer;
+  background: rgba(255,255,255,.75);
+}
+
+a:hover {
+  text-decoration: none;
 }
 
 .teams  {

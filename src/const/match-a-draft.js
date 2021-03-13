@@ -6,7 +6,7 @@ const bogSocratra = 'BogSocratra';
 const reverseArena = 'ReverseArena';
 const ponds = 'Ponds';
 const arabia = 'Arabia';
-const crochetbia = 'CrochetBia';
+const crochetbia = 'Crochetbia';
 const tideout = 'Tideout';
 
 export const team1 = {
