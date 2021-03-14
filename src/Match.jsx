@@ -1,6 +1,5 @@
 import React, {useState} from 'react';
 import './style/Civs.css';
-import {Header} from './components/Header';
 import wolf from './assets/teams/wolf.png';
 import hawk from './assets/teams/hawk.png';
 import {team1, team2} from './const/match-a-draft';
@@ -186,7 +185,6 @@ export const Match = () => {
 
     return (
         <div>
-            <Header />
             <div className="match-title">
                 <h3>RICE BRACKET - best of 7</h3>
             </div>

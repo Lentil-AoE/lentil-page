@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap');
+
 .App {
   text-align: center;
 }
@@ -21,7 +23,6 @@ section {
 }
 
 .section-right {
-  color: rgb(183,62,246);
   color: white;
 }
 
@@ -315,4 +316,75 @@ img {
   align-items: center;
   justify-content: center;
   font-size: 2.8rem;
+}
+
+.sample {
+  display: flex;
+  flex-direction: column;
+  width: 1000px;
+  margin: 25px auto;
+  justify-content: center;
+  align-items: center;
+}
+
+.bar {
+  width: 1200px;
+  height: 150px;
+  background: teal;
+  background: rgba(0,128,128, .5);
+  padding: 25px;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.25rem;
+}
+
+.circle {
+  background: teal;
+  height: 450px;
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* justify-content: center; */
+  padding: 25px;
+  background: rgba(0,128,128, .5);
+  margin: 0 45px;
+  box-sizing: border-box;
+}
+
+.circle h1 {
+  width: 300px;
+}
+
+.circle p {
+  width: 300px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.5rem;
+}
+
+.circle img {
+  height: 200px;
+  margin: auto;
+  border-radius: 50%;
+  border: 10px solid teal;
+}
+
+.circle img:hover {
+  cursor: pointer;
+  transform: scaleX(-1);
+}
+
+ul {
+  text-align: justify;
+}
+
+.lines {
+  display: flex;
+  width: 1200px;
+  justify-content: space-evenly;
+  justify-content: center;
+}
+
+.marquee {
+  font-size: 2rem;
 }

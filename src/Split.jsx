@@ -1,7 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 
-export const Home = () => {
+export const Split = () => {
     return (
         <div className='page'>
             <section className='section-left'>
@@ -10,7 +10,7 @@ export const Home = () => {
             </section>
             <section className='section-right'>
                 <h1>Lentil Cup 2</h1> 
-                <Link to='two/match'>
+                <Link to='/two'>
                     <button className='btn-big btn-right'>Enter</button>  
                 </Link>
             </section>
