@@ -5,7 +5,7 @@ export const Header = () => {
     return (
         <header>
             <Link to='/'>
-                <div className='logo'><i class="fas fa-home"></i></div>
+                <div className='logo'><i className="fas fa-home"></i></div>
             </Link>
             <div className='header-title'>
                 <h2>LENTIL CUP 2</h2>
