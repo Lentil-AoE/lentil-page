@@ -39,7 +39,6 @@ section h1 {
 
 .btn-big {
   padding: 20px 80px;
-  background-color: rgb(183,62,246);
   border-radius: 45px;
   font-size: 1.5rem;
   border: 1px solid transparent;
@@ -49,6 +48,7 @@ section h1 {
 .btn-left {
   background: rgba(255,255,255,.25);
   backdrop-filter: blur(5px);
+  color: black;
 }
 
 .btn-right {
@@ -345,7 +345,6 @@ img {
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* justify-content: center; */
   padding: 25px;
   background: rgba(0,128,128, .5);
   margin: 0 45px;
@@ -359,7 +358,7 @@ img {
 .circle p {
   width: 300px;
   font-family: 'Roboto', sans-serif;
-  font-size: 1.5rem;
+  font-size: 1.25rem;
 }
 
 .circle img {
@@ -387,4 +386,22 @@ ul {
 
 .marquee {
   font-size: 2rem;
+}
+
+.circle a, .modal span {
+  color: magenta;
+  text-decoration: none;
+}
+
+.circle a:hover, .modal span:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.modal {
+  position: fixed;
+  top: 70px;
+  height: 100vh;
+  width: 100vw;
+  text-align-last: center;
 }

@@ -1,14 +1,16 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { Header } from './components/Header';
 import { Match } from './Match';
-import { Switch, Route } from 'react-router-dom';
 import wolf from './assets/teams/wolf.png'
 
 export const Sample = () => {
+    const [modalToggle, changeToggle] = useState(false);
+
     return (
         <div>
             <Header />
-            <div className='sample'>
+            {modalToggle && <Match changeToggle={changeToggle}/>}
+            {!modalToggle && <div className='sample'>
                 <div className='bar'>
                 <marquee className='marquee' behavior="" direction="left">
                         <p>
@@ -23,19 +25,23 @@ export const Sample = () => {
                 <div className='circle'>
                     <h1>Sample Match UI ✨</h1>
                     <p>Click on the pizza wolf below.</p>
-                    <img src={wolf} alt=""/>
+                    <img 
+                    alt='wolf with the face of a pizza'
+                    onClick={() => changeToggle(true)}
+                    src={wolf} 
+                    />
                 </div>
                 <div className='circle'>
                     <h1>New Map Pool! ✨</h1>
                     <p>New maps currently being developed!</p>
                     <ul>
                         <li>Ever wish Socratra was boggier?</li>
-                        <li>Ever wish that you started a game trapped inside your opponent walls?</li>
-                        <li>Ever wish your starting scout was super slow and could collect relics?</li>
+                        <li>...that you started a game trapped inside your opponent walls?</li>
+                        <li>... that your starting scout was super slow and could collect relics?</li>
                     </ul>
                     <p>You no longer have to wish!</p>
                     <br/>
-                    <p>Help us test new maps here.</p>
+                    <p>Help us test new maps <a href='https://github.com/Random-Map-Scripting/maps-in-development' target='__blank' rel='noreferrer'>here <i class="fas fa-external-link-alt"></i></a>.</p>
                 </div>
                 </div>
                 <div className="bar">
@@ -49,7 +55,7 @@ export const Sample = () => {
                         </p> 
                     </marquee>
                 </div>
-            </div>
+            </div>}
         </div>
     )
 }

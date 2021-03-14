@@ -15,7 +15,7 @@ const mapDraft = [
     team2.maps[2], 
 ]
 
-export const Match = () => {
+export const Match = props => {
     const [maps1, updateMaps] = useState(['MegaRandom']);
     const [team1CivPicks, updateTeam1CivPicks] = useState([]);
     const [team2CivPicks, updateTeam2CivPicks] = useState([]);
@@ -184,8 +184,11 @@ export const Match = () => {
 )
 
     return (
-        <div>
-            <div className="match-title">
+        <div className='modal'>
+            <br/>
+            <p>In development - let me know if you can break anything important. Click <span onClick={() => props.changeToggle(false)}>here</span> (or refresh) to go back.</p>
+            <br/>
+            <div className='match-title'>
                 <h3>RICE BRACKET - best of 7</h3>
             </div>
             <div className='teams'>
