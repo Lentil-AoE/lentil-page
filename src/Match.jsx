@@ -65,6 +65,10 @@ export const Match = () => {
     const containsMap = mapName => mapsUsed.find(map => map === mapName)
     
     const updateMaps1 = async (map, i) => {
+        if(!result.team1[i]){
+            return
+        }
+
         if(containsMap(map)){
             return
         }

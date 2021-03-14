@@ -34,7 +34,7 @@ export const team2 = {
         civList.britons,
         civList.saracens,
         civList.portuguese,
-        civList.vietnamese,
+        civList.byzantines,
         civList.slavs,
         civList.spanish,
         civList.incas,
