@@ -40,6 +40,11 @@
   background-position: center;
 }
 
+.civ {
+  height: 100px;
+  width: 100px;
+}
+
 .plus {
   height: 50px;
   width: 50px;
@@ -125,17 +130,29 @@ body {
   border-radius: 50%;
 }
 
+.wrap {
+  flex-wrap: wrap;
+}
+
 button {
-  margin-top: 100px;
   background: teal;
   font-size: 1.25rem;
   width: 100px;
   height: 40px;
   border-radius: 7px;
+  margin: 5px;
+}
+
+.buttons {
+  margin-top: 100px;
 }
 
 button:hover {
   color: white;
   cursor: pointer;
   background: gray;
+}
+
+.red {
+  color: red;
 }

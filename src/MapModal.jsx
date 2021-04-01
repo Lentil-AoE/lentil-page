@@ -27,7 +27,10 @@ export const MapModal = props => {
                         <p>Tideout</p>
                     </div>
                 </div>
+                <div className="buttons flex">
+                <button onClick={() => props.toggleMaps(false)}>submit</button>
                 <button onClick={() => props.toggleMaps(false)}>close</button>
+                </div>
             </div>
         </div>
     )

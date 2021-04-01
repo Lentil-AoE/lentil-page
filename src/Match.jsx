@@ -1,11 +1,15 @@
 import React, { useState } from 'react';
-import {MapModal} from './MapModal'
+import {MapModal} from './MapModal';
+import {CivModal} from './CivModal';
 
 export const Match = () => {
-    const [showMaps, toggleMaps] = useState(false)
+    const [showMaps, toggleMaps] = useState(false);
+    const [showCivs, toggleCivs] = useState(false);
+
     return (
         <>
         {showMaps && <MapModal toggleMaps={toggleMaps}/> }
+        {showCivs && <CivModal toggleMaps={toggleCivs}/>}
         <div className='page'>
             <div className="container flex">
                 <div className="player">
@@ -22,7 +26,8 @@ export const Match = () => {
             <h1>Maps</h1>
             <div className="container flex">
                 <div className="maps flex">
-                    <div className="plus flex" onClick={() => toggleMaps(true)}>+</div>
+                    <div className="plus flex" onClick={() => toggleMaps(true)}>1</div>
+                    <div className="plus flex" onClick={() => toggleMaps(true)}>1</div>
                 </div>
 
                 <div className='flex flex-col gray'>
@@ -32,15 +37,7 @@ export const Match = () => {
                 
 
                 <div className="maps flex">
-                {/* <div className='flex flex-col'>
-                    <div className="map megarandom"></div>
-                    <p>Megarandom</p>
-                </div>
-                <div className='flex flex-col'>
-                    <div className="map megarandom"></div>
-                    <p>Megarandom</p>
-                </div> */}
-                    <div className="plus flex" onClick={() => toggleMaps(true)}>+</div>
+                    <div className="plus flex" onClick={() => toggleMaps(true)}>2</div>
                 </div>
 
             </div>
@@ -50,7 +47,10 @@ export const Match = () => {
             <h1>Civs</h1>
             <div className="container flex">
             <div className="maps flex">
-                    <div className="plus flex">+</div>
+            <div className="plus flex" onClick={() => toggleCivs(true)}>1</div>
+            <div className="plus flex" onClick={() => toggleCivs(true)}>2</div>
+            <div className="plus flex" onClick={() => toggleCivs(true)}>1</div>
+            <div className="plus flex red" onClick={() => toggleCivs(true)}>×</div>
                 </div>
                 <div className="gray">
                 <div className='flex flex-col'>
@@ -60,7 +60,9 @@ export const Match = () => {
                 </div>
                 </div>
                 <div className="maps flex">
-                    <div className="plus flex">+</div>
+                <div className="plus flex red" onClick={() => toggleCivs(true)}>×</div>
+                <div className="plus flex" onClick={() => toggleCivs(true)}>2</div>
+                <div className="plus flex" onClick={() => toggleCivs(true)}>2</div>
                 </div>
             </div>
         </div>
