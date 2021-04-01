@@ -107,5 +107,35 @@ img {
 
 body {
   background: black;
-  background: radial-gradient(magenta, black)
+  background: radial-gradient(magenta, black);
+}
+
+.modal {
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  background: rgba(255,255,255,.5);
+  background: rgba(5,255,255,.75);
+  background: rgba(5,5,5,.65);
+}
+
+.white {
+  background: white;
+  padding: 200px;
+  border-radius: 50%;
+}
+
+button {
+  margin-top: 100px;
+  background: teal;
+  font-size: 1.25rem;
+  width: 100px;
+  height: 40px;
+  border-radius: 7px;
+}
+
+button:hover {
+  color: white;
+  cursor: pointer;
+  background: gray;
 }

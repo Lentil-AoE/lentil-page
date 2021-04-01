@@ -1,7 +1,11 @@
 import React, { useState } from 'react';
+import {MapModal} from './MapModal'
 
 export const Match = () => {
+    const [showMaps, toggleMaps] = useState(false)
     return (
+        <>
+        {showMaps && <MapModal toggleMaps={toggleMaps}/> }
         <div className='page'>
             <div className="container flex">
                 <div className="player">
@@ -18,13 +22,14 @@ export const Match = () => {
             <h1>Maps</h1>
             <div className="container flex">
                 <div className="maps flex">
-                    <div className="plus flex">+</div>
+                    <div className="plus flex" onClick={() => toggleMaps(true)}>+</div>
                 </div>
 
                 <div className='flex flex-col gray'>
                     <div className="map megarandom"></div>
                     <p>Megarandom</p>
                 </div>
+                
 
                 <div className="maps flex">
                 {/* <div className='flex flex-col'>
@@ -35,7 +40,7 @@ export const Match = () => {
                     <div className="map megarandom"></div>
                     <p>Megarandom</p>
                 </div> */}
-                    <div className="plus flex">+</div>
+                    <div className="plus flex" onClick={() => toggleMaps(true)}>+</div>
                 </div>
 
             </div>
@@ -59,5 +64,6 @@ export const Match = () => {
                 </div>
             </div>
         </div>
+        </>
     )
 }
