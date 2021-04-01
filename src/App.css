@@ -22,12 +22,12 @@
   min-width: 200px;
   text-align: center;
   padding: 2px;
+  color: white;
 }
 
 .maps, .gray {
   padding: 5px;
   object-fit: cover;
-  /* border: 1px solid lightgray; */
   width: 100%;
 }
 
@@ -44,14 +44,14 @@
   height: 50px;
   width: 50px;
   margin: 25px 5px;
-  border: 1px solid lightgray;
   border-radius: 50%;
-  background: white;
+  background: rgba(255,255,255,.5);
+  color: teal;
 }
 
 .plus:hover {
   cursor: pointer;
-  background: gray;
+  background: teal;
   font-weight: 700;
   color: white;
 }
@@ -68,7 +68,12 @@ p {
 input {
   font-size: 2rem;
   width: 90%;
-  border: 1px solid lightgray;
+  /* border: 1px solid lightgray; */
+  background: teal;
+}
+
+input::placeholder {
+  color: white;
 }
 
 .left {
@@ -84,13 +89,13 @@ h1 {
   margin: 0 auto;
   color: white;
   font-weight: 300;
-  background: gray;
+  background: teal;
   width: 90vw;
   border-radius: 5px;
 }
 
 .gray {
-  background: gray;
+  background: teal;
   width: auto;
 }
 
@@ -102,5 +107,5 @@ img {
 
 body {
   background: black;
-  background: radial-gradient(white, gray)
+  background: radial-gradient(magenta, black)
 }
