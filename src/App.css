@@ -12,10 +12,10 @@
 }
 
 .container {
-  width: 1000px;
+  /* max-width: 1400px; */
   margin: 0 auto;
   font-size: 2rem;
-  justify-content: space-between;
+  /* justify-content: space-between; */
 }
 
 .player {
@@ -28,7 +28,6 @@
 .maps, .gray {
   padding: 5px;
   object-fit: cover;
-  width: 500px;
 }
 
 .map, .civ {
@@ -117,8 +116,6 @@ body {
   height: 100vh;
   width: 100vw;
   position: fixed;
-  background: rgba(255,255,255,.5);
-  background: rgba(5,255,255,.75);
   background: rgba(5,5,5,.65);
 }
 
@@ -153,4 +150,8 @@ button:hover {
 
 .red {
   color: red;
+}
+
+.margin {
+  margin: 0 25px;
 }

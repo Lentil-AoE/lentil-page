@@ -2,12 +2,15 @@ import React, { useState } from 'react';
 import { MapModal } from './MapModal';
 import { CivModal } from './CivModal';
 import { mapNames } from './MapModal';
+import {civNames} from './const/civs';
 
 export const Match = () => {
     const [showMaps, toggleMaps] = useState(false);
     const [showCivs, toggleCivs] = useState(false);
 
     const [mapsArray, addMap] = useState([]);
+    const [civsArray, addCiv] = useState([]);
+
     const [player1, changePlayer1] = useState('Player 1');
     const [player2, changePlayer2] = useState('Player 2');
 
@@ -17,22 +20,25 @@ export const Match = () => {
         message: ''
     });
 
-    const onMapClick = (player, number, message) => {
+    const onMapClick = (player, number, message, type) => {
         setInfo({
             player,
             number,
             message
         });
 
-        toggleMaps(true);
+        type === 'maps' && toggleMaps(true);
+        type === 'civs' && toggleCivs(true);
     }
 
-    const returnMap = map => {
-        console.log(mapsArray)
+    const returnMap = (map, ban) => {
+        const isMap = mapNames[map]
+
         return (
             <div className='flex flex-col'>
-                <div className={`map ${map}`}></div>
+                <div className={`${isMap ? 'map margin' : 'civ'} ${map}`}>{ban && 'X'}</div>
                 <p>{mapNames[map]}</p>
+                <p>{civNames[map.toLowerCase()]}</p>
             </div>
         )
     }
@@ -41,25 +47,34 @@ export const Match = () => {
         return (
             mapsArray[i] ?
                 returnMap(mapsArray[i])
-                : <div className="plus flex" onClick={() => onMapClick(player, number, message)}>1</div>
+                : <div className="plus flex" onClick={() => onMapClick(player, number, message, 'maps')}>1</div>
         )
     }
 
-    const pickTwo = (player, number, message, i) => {
+    const pickOneCiv = (player, number, message, i) => {
+        const ban = message === 'ban one';
+
         return (
-            mapsArray[2] ?
+            civsArray[i] ? returnMap(civsArray[i], ban) 
+            : <div className={`plus flex ${ban && 'red'}`} onClick={() => onMapClick(player, number, message, 'civs')}>{number}</div>
+        )
+    }
+
+    const pickTwoCivs = (player, number, message, i) => {
+        return (
+            civsArray[i] ?
                 <>
-                {returnMap(mapsArray[i-1])}
-                {returnMap(mapsArray[i])}
+                {returnMap(civsArray[i-1])}
+                {returnMap(civsArray[i])}
                 </>
-                : <div className="plus flex" onClick={() => onMapClick(player, number, message)}>2</div>
+                : <div className="plus flex" onClick={() => onMapClick(player, number, message, 'civs')}>2</div>
         )
     }
 
     return (
         <>
             {showMaps && <MapModal toggleMaps={toggleMaps} mapsArray={mapsArray} addMap={addMap} info={info} />}
-            {showCivs && <CivModal toggleMaps={toggleCivs} />}
+            {showCivs && <CivModal toggleCivs={toggleCivs} civsArray={civsArray} addCiv={addCiv} info={info}/>}
             <div className='page'>
                 <div className="container flex">
                     <div className="player">
@@ -70,36 +85,36 @@ export const Match = () => {
                         <input type="text" placeholder='Player 2' className='right' onChange={e => changePlayer2(e.target.value)} />
                     </div>
                 </div>
+
                 <br />
                 <br />
                 <br />
                 <h1>Maps</h1>
                 <div className="container flex">
                     <div className="maps flex">
+                    {pickOneCiv(player1, '×', 'ban one', 0)}
                             {pickOne(player1, 1, 'pick one', 0)}
                     </div>
-
                     <div className='flex flex-col gray'>
                         <div className="map megarandom"></div>
                         <p>Megarandom</p>
                     </div>
-
-
                     <div className="maps flex">
                         {pickOne(player2, 1, 'pick one', 1)}
+                        {pickOneCiv(player2, '×', 'ban one', 1)}
                     </div>
-
                 </div>
+
                 <br />
                 <br />
                 <br />
                 <h1>Civs</h1>
                 <div className="container flex">
                     <div className="maps flex">
-                        <div className="plus flex" onClick={() => toggleCivs(true)}>1</div>
-                        <div className="plus flex" onClick={() => toggleCivs(true)}>2</div>
-                        <div className="plus flex" onClick={() => toggleCivs(true)}>1</div>
-                        <div className="plus flex red" onClick={() => toggleCivs(true)}>×</div>
+                        {pickOneCiv(player1, 1, 'pick one', 9)}
+                        {pickTwoCivs(player1, 2, 'pick two', 6)}
+                        {pickOneCiv(player1, 1, 'pick one', 2)}
+                        {/* {pickOneCiv(player1, '×', 'ban one', 0)} */}
                     </div>
                     <div className="gray">
                         <div className='flex flex-col'>
@@ -109,9 +124,9 @@ export const Match = () => {
                         </div>
                     </div>
                     <div className="maps flex">
-                        <div className="plus flex red" onClick={() => toggleCivs(true)}>×</div>
-                        <div className="plus flex" onClick={() => toggleCivs(true)}>2</div>
-                        <div className="plus flex" onClick={() => toggleCivs(true)}>2</div>
+                        {/* {pickOneCiv(player2, '×', 'ban one', 1)} */}
+                        {pickTwoCivs(player2, 2, 'pick two', 4)}
+                        {pickTwoCivs(player2, 2, 'pick two', 8)}
                     </div>
                 </div>
             </div>
