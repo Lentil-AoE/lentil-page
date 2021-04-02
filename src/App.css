@@ -38,6 +38,12 @@
   margin: 5px;
   background-size: 120%;
   background-position: center;
+  font-size: 15rem;
+  color: red;
+  font-family: monospace;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .civ {
@@ -73,20 +79,12 @@ p {
 input {
   font-size: 2rem;
   width: 90%;
-  /* border: 1px solid lightgray; */
   background: teal;
+  text-align: center;
 }
 
 input::placeholder {
   color: white;
-}
-
-.left {
-  text-align: start;
-}
-
-.right {
-  text-align: end;
 }
 
 h1 {
