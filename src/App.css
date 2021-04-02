@@ -28,7 +28,7 @@
 .maps, .gray {
   padding: 5px;
   object-fit: cover;
-  width: 100%;
+  width: 500px;
 }
 
 .map, .civ {
@@ -93,7 +93,7 @@ h1 {
   color: white;
   font-weight: 300;
   background: teal;
-  width: 90vw;
+  width: 60vw;
   border-radius: 5px;
 }
 

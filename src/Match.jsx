@@ -76,7 +76,6 @@ export const Match = () => {
                 <h1>Maps</h1>
                 <div className="container flex">
                     <div className="maps flex">
-                            {pickOne(player1, 1, 'pick one', 3)}
                             {pickOne(player1, 1, 'pick one', 0)}
                     </div>
 
@@ -87,7 +86,7 @@ export const Match = () => {
 
 
                     <div className="maps flex">
-                        {pickTwo(player2, 2, 'pick two', 2)}
+                        {pickOne(player2, 1, 'pick one', 1)}
                     </div>
 
                 </div>
