@@ -28,6 +28,7 @@
 .maps, .gray {
   padding: 5px;
   object-fit: cover;
+  min-width: 200px;
 }
 
 .map, .civ {

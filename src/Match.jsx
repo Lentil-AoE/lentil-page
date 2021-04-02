@@ -114,7 +114,6 @@ export const Match = () => {
                         {pickOneCiv(player1, 1, 'pick one', 9)}
                         {pickTwoCivs(player1, 2, 'pick two', 6)}
                         {pickOneCiv(player1, 1, 'pick one', 2)}
-                        {/* {pickOneCiv(player1, '×', 'ban one', 0)} */}
                     </div>
                     <div className="gray">
                         <div className='flex flex-col'>
@@ -124,7 +123,6 @@ export const Match = () => {
                         </div>
                     </div>
                     <div className="maps flex">
-                        {/* {pickOneCiv(player2, '×', 'ban one', 1)} */}
                         {pickTwoCivs(player2, 2, 'pick two', 4)}
                         {pickTwoCivs(player2, 2, 'pick two', 8)}
                     </div>
