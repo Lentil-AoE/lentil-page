@@ -1,407 +1,157 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap');
-
-.App {
-  text-align: center;
+.flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .page {
-  display: flex;
-
-}
-
-section {
-  width: 50vw;
   height: 100vh;
+  width: 100vw;
   box-sizing: border-box;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
+  padding: 50px;
 }
 
-.section-left {
-  background-image: url('./assets/lentil-wallpaper.jpg');
+.container {
+  /* max-width: 1400px; */
+  margin: 0 auto;
+  font-size: 2rem;
+  /* justify-content: space-between; */
 }
 
-.section-right {
+.player {
+  min-width: 200px;
+  text-align: center;
+  padding: 2px;
   color: white;
 }
 
-section h1 {
-  font-size: 2.5rem;
-  margin: 15px;
-  margin-top: 37vh;
-}
-
-.section-left h1 {
-  color: white;
-  text-shadow: 1px 1px black;
-}
-
-.btn-big {
-  padding: 20px 80px;
-  border-radius: 45px;
-  font-size: 1.5rem;
-  border: 1px solid transparent;
-  background: teal;
-}
-
-.btn-left {
-  background: rgba(255,255,255,.25);
-  backdrop-filter: blur(5px);
-  color: black;
-}
-
-.btn-right {
-  border: 2px solid transparent;
-  color: white;
-}
-
-.btn-left:hover {
-  background: rgba(255,255,255,.75);
-  border: 1px solid gray;
-  color: gray;
-}
-
-.btn-right:hover {
-  font-weight: 500;
-  background: white;
-  color: teal;
-}
-
-/* match */
-header {
-  color: teal;
-  padding: 5px 0;
-  height: 65px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.header-title {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-
-.logo {
-  height: 50px;
-  width: 50px;
-  background: url('./assets/lentil-wallpaper.jpg');
-  background: rgba(255,255,255,.5);
-  background-size: 250px;
-  margin: 5px;
-  border-radius: 100%;
-  font-size: 2.5rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: teal;
-}
-
-.logo:hover {
-  cursor: pointer;
-  background: rgba(255,255,255,.75);
-}
-
-a:hover {
-  text-decoration: none;
-}
-
-.teams  {
-  margin: 0 auto;
-  width: 1000px;
-  display: flex;
-  justify-content: space-evenly;
-}
-
-.team {
-  display: flex;
-  width: 100%;
-  height: 85px;
-  display: flex;
-}
-
-.flex {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0 25px;
-}
-
-.team-left {
-  justify-content: flex-end;
-}
-
-.team-right {
-  justify-content: flex-start;
-}
-
-.maps {
-  width: 1000px;
-  height: 100px;
-  margin: 0 auto;
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  background: rgba(255,255,255,.75);
-  background: teal;
-}
-
-.map {
-  height: 75px;
-  width: 75px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-}
-
-.civs {
-  width: 1000px;
-  margin: 0 auto;
-  display: flex;
-}
-
-.civ-picks {
+.maps, .gray {
   padding: 5px;
-  width: 500px;
+  object-fit: cover;
+}
+
+.map, .civ {
+  height: 150px;
+  width: 155px;
+  border: 1px solid black;
+  margin: 5px;
+  background-size: 120%;
+  background-position: center;
+  font-size: 15rem;
+  color: red;
+  font-family: monospace;
   display: flex;
-  box-sizing: border-box;
-  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
 }
 
 .civ {
-  height: 75px;
-  width: 75px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: teal;
-  background: teal;
-  object-fit: contain;
-  background-size: 100%;
-  font-size: 3.5rem;
-}
-
-.games {
-  margin: 0 auto;
-  width: 1000px;
-  display: flex;
-  overflow-y: scroll;
-  max-height: calc(100vh - 580px);
-  border-top: 3px solid teal;
-  border-radius: 0 0 45px 45px;
-}
-
-.games-left, .games-right {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  box-sizing: border-box;
-}
-
-.games-left {
-  align-items: flex-end;
-}
-
-.game-left h2 {
-  text-align: center;
-  padding-right: 30px;
-}
-
-.games-right .map {
-  padding-left: 30px;
-  max-width: 100px;
-}
-
-.game-left, .game-right {
-  display: flex;
-  align-items: center;
-  width: 350px;
-  margin: 5px;
-  padding: 5px;
-  box-sizing: border-box;
-  color: rgba(255,255,255,.75);
-}
-
-.game-left {
-  justify-content: flex-end;
-}
-
-.games::-webkit-scrollbar {
-  display: none;
-}
-
-.left {
-  background: rgba(0,0,0,.45);
-}
-
-.right {
-  background: rgba(255,255,255,.45);
-}
-
-.match-title {
-  margin: 0 auto;
-  width: 1000px;
-  box-sizing: border-box;
-  height: 45px;
-  background: gray;
-  text-align: center;
-  align-items: center;
-  display: flex;
-  justify-content: center;
-  background: rgba(255,255,255,.75);
-  border-radius: 45px 45px 0 0;
-  background: teal;
-}
-
-.score {
-  padding: 25px;
-  font-size: 5.5rem;
-  display: flex;
-  align-items: center;
-  color: teal;
-  font-family: monospace;
-}
-
-img {
-  object-fit: cover;
-  height: 100%;
-}
-
-.flex-left img, .flex-right img {
-  height: 70px;
+  height: 100px;
   width: 100px;
+}
+
+.plus {
+  height: 50px;
+  width: 50px;
+  margin: 25px 5px;
+  border-radius: 50%;
+  background: rgba(255,255,255,.5);
+  color: teal;
+}
+
+.plus:hover {
+  cursor: pointer;
+  background: teal;
+  font-weight: 700;
+  color: white;
+}
+
+p {
+  font-size: 1rem;
+  margin: 0;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+input {
+  font-size: 2rem;
+  width: 90%;
+  background: teal;
+  text-align: center;
+}
+
+input::placeholder {
+  color: white;
+}
+
+h1 {
+  text-align: center;
+  margin: 0 auto;
+  color: white;
+  font-weight: 300;
+  background: teal;
+  width: 60vw;
   border-radius: 5px;
 }
 
-.flex-left img {
-  margin-right: 15px;
-  transform: scaleX(-1);
+.gray {
+  background: teal;
+  width: auto;
 }
 
-.flex-right img {
-  margin-left: 15px;
-}
-
-.civ-div {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin: 5px 5px;
-  width: 85px;
-}
-
-.team-names p {
-  text-align: center;
-}
-
-.hover:hover {
-  cursor: pointer;
-}
-
-.test {
-  background: url('./assets/maps/megarandom.png');
-  height: 100%;
-  width: 65px;
-  background-size: cover;
-  background-size: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 2.8rem;
-}
-
-.sample {
-  display: flex;
-  flex-direction: column;
-  width: 1000px;
-  margin: 25px auto;
-  justify-content: center;
-  align-items: center;
-}
-
-.bar {
-  width: 1200px;
+img {
   height: 150px;
-  background: teal;
-  background: rgba(0,128,128, .5);
-  padding: 25px;
-  box-sizing: border-box;
-  font-family: 'Roboto', sans-serif;
-  font-size: 1.25rem;
+  width: 150px;
+  object-fit: contain;
 }
 
-.circle {
-  background: teal;
-  height: 450px;
-  width: 400px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 25px;
-  background: rgba(0,128,128, .5);
-  margin: 0 45px;
-  box-sizing: border-box;
-}
-
-.circle h1 {
-  width: 300px;
-}
-
-.circle p {
-  width: 300px;
-  font-family: 'Roboto', sans-serif;
-  font-size: 1.25rem;
-}
-
-.circle img {
-  height: 200px;
-  margin: auto;
-  border-radius: 50%;
-  border: 10px solid teal;
-}
-
-.circle img:hover {
-  cursor: pointer;
-  transform: scaleX(-1);
-}
-
-ul {
-  text-align: justify;
-}
-
-.lines {
-  display: flex;
-  width: 1200px;
-  justify-content: space-evenly;
-  justify-content: center;
-}
-
-.marquee {
-  font-size: 2rem;
-}
-
-.circle a, .modal span {
-  color: magenta;
-  text-decoration: none;
-}
-
-.circle a:hover, .modal span:hover {
-  text-decoration: underline;
-  cursor: pointer;
+body {
+  background: black;
+  background: radial-gradient(magenta, black);
 }
 
 .modal {
-  position: fixed;
-  top: 70px;
   height: 100vh;
   width: 100vw;
-  text-align-last: center;
+  position: fixed;
+  background: rgba(5,5,5,.65);
+}
+
+.white {
+  background: white;
+  padding: 200px;
+  border-radius: 50%;
+}
+
+.wrap {
+  flex-wrap: wrap;
+}
+
+button {
+  background: teal;
+  font-size: 1.25rem;
+  width: 100px;
+  height: 40px;
+  border-radius: 7px;
+  margin: 5px;
+}
+
+.buttons {
+  margin-top: 100px;
+}
+
+button:hover {
+  color: white;
+  cursor: pointer;
+  background: gray;
+}
+
+.red {
+  color: red;
+}
+
+.margin {
+  margin: 0 25px;
 }

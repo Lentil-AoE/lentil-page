@@ -1,9 +1,10 @@
 
-export const civList = {
+export const civNames = {
     aztecs: 'Aztecs',
     berbers: 'Berbers',
     britons: 'Britons',
     bulgarians: 'Bulgarians',
+    burgundians: 'Burgundians',
     burmese: 'Burmese',
     byzantines: 'Byzantines',
     celts: 'Celts',
@@ -28,6 +29,7 @@ export const civList = {
     persians: 'Persians',
     portuguese: 'Portuguese',
     saracens: 'Saracens',
+    sicilians: 'Sicilians',
     slavs: 'Slavs',
     spanish: 'Spanish',
     tatars: 'Tatars',
@@ -36,3 +38,8 @@ export const civList = {
     vietnamese: 'Vietnamese',
     vikings: 'Vikings'
 };
+
+export const civs = ['Aztecs','Berbers','Britons','Bulgarians', 'Burgundians', 'Burmese','Byzantines','Celts','Chinese','Cumans','Ethiopians','Franks','Goths',
+'Huns','Incas','Indians','Italians','Japanese','Khmer','Koreans','Lithuanians','Magyars','Malay','Malians','Mayans','Mongols','Persians','Portuguese',
+'Saracens', 'Sicilians', 'Slavs','Spanish','Tatars','Teutons','Turks','Vietnamese','Vikings'
+];

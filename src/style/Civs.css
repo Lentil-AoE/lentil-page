@@ -22,6 +22,10 @@
     background-image: url('/src/assets/civs/burmese.png');
 }
 
+.Burgundians {
+    background-image: url('/src/assets/civs/Burgundians.png');
+}
+
 .Celts {
     background-image: url('/src/assets/civs/celts.png');
 }
@@ -100,6 +104,10 @@
 
 .Saracens{
     background-image: url('/src/assets/civs/saracens.png');
+}
+
+.Sicilians {
+    background-image: url('/src/assets/civs/Sicilians.png');
 }
 
 .Slavs {
