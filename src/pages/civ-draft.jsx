@@ -79,7 +79,7 @@ export const CivDraft = () => {
                         <div className={`box3 ${playerTwoMap}`}></div>
                         <p>{playerTwoMap}</p>
                     </div>
-                    <div className='flex col'>
+                    <div className='flex col name'>
                         <h2>{playerTwoName} pick map</h2>
                         <button onClick={() => setComponentIndex(3)}>
                             Next
