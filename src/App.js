@@ -1,11 +1,13 @@
-import './style/Maps.css'
-import './style/Civs.css'
+import './Maps.css';
+import './Civs.css';
 import './App.css';
-import {Match} from './Match';
+import {CivDraft} from './pages/civ-draft';
 
 function App() {
   return (
-    <Match/>
+    <div>
+        <CivDraft/>
+    </div>
   );
 }
 

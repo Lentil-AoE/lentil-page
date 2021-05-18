@@ -1,158 +1,164 @@
-.flex {
+.page {
+  display: flex;
+}
+
+.panel {
+  width: 250px;
+  height: 100vh;
+  border: solid black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.step {
+  font-size: 2rem;
+  border-bottom: solid black;
+  width: 100%;
   display: flex;
   justify-content: center;
-  align-items: center;
 }
 
-.page {
-  height: 100vh;
-  width: 100vw;
-  box-sizing: border-box;
-  padding: 50px;
+.step:hover {
+  cursor: pointer;
 }
 
-.container {
-  /* max-width: 1400px; */
-  margin: 0 auto;
-  font-size: 2rem;
-  /* justify-content: space-between; */
+.selected {
+  color: white;
+  background: black;
 }
 
 .player {
-  min-width: 200px;
-  text-align: center;
-  padding: 2px;
-  color: white;
+  border: solid black;
+  border-left: none;
+  width: 50%;
+  padding: 20px;
 }
 
-.maps, .gray {
-  padding: 5px;
-  object-fit: cover;
-  min-width: 200px;
+.maps {
+  display: flex;
+  width: 100%;
+  align-items: center;
 }
 
-.map, .civ {
-  height: 150px;
-  width: 155px;
-  border: 1px solid black;
+.left {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.box, .box2, .box3 {
+  border: solid black;
+  height: 75px;
+  width: 75px;
   margin: 5px;
-  background-size: 120%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
   background-position: center;
-  font-size: 15rem;
+  font-size: 6rem;
   color: red;
   font-family: monospace;
+}
+
+.box2 {
+  height: 100px;
+  width: 100px;
+  font-size: 8rem;
+  color: red;
+  font-family: monospace;
+}
+
+.box3 {
+  height: 150px;
+  width: 150px;
+  font-size: 10rem;
+  color: red;
+  font-family: monospace;
+}
+
+.civs {
   display: flex;
+}
+
+.display {
+  border-bottom: solid black;
+  box-sizing: border-box;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  /* padding: 25px 0; */
+}
+
+.container {
+  width: 100%;
+}
+
+.flex {
+  display: flex;
+  margin: 0 auto;
   justify-content: center;
   align-items: center;
 }
 
-.civ {
-  height: 100px;
-  width: 100px;
-}
-
-.plus {
-  height: 50px;
-  width: 50px;
-  margin: 25px 5px;
-  border-radius: 50%;
-  background: rgba(255,255,255,.5);
-  color: teal;
-}
-
-.plus:hover {
-  cursor: pointer;
-  background: teal;
-  font-weight: 700;
-  color: white;
-}
-
-p {
-  font-size: 1rem;
+.col {
+  flex-direction: column;
   margin: 0;
 }
 
-.flex-col {
-  flex-direction: column;
-}
-
 input {
-  font-size: 2rem;
-  width: 90%;
-  background: teal;
+  height: 2rem;
+  border: solid black;
+  font-size: 1.5rem;
   text-align: center;
 }
 
-input::placeholder {
-  color: white;
-}
-
-h1 {
-  text-align: center;
-  margin: 0 auto;
-  color: white;
-  font-weight: 300;
-  background: teal;
-  width: 60vw;
-  border-radius: 5px;
-}
-
-.gray {
-  background: teal;
-  width: auto;
-}
-
-img {
-  height: 150px;
-  width: 150px;
-  object-fit: contain;
-}
-
-body {
-  background: black;
-  background: radial-gradient(magenta, black);
-}
-
-.modal {
-  height: 100vh;
-  width: 100vw;
-  position: fixed;
-  background: rgba(5,5,5,.65);
-}
-
-.white {
-  background: white;
-  padding: 200px;
-  border-radius: 50%;
-}
-
-.wrap {
-  flex-wrap: wrap;
-}
-
-button {
-  background: teal;
-  font-size: 1.25rem;
-  width: 100px;
-  height: 40px;
-  border-radius: 7px;
+h1, h2 {
   margin: 5px;
 }
 
-.buttons {
-  margin-top: 100px;
+p {
+  margin: 0;
+  font-size: 1.25rem;
+}
+
+button {
+  height: 50px;
+  width: 175px;
+  background: black;
+  font-size: 1.5rem;
+  border: solid black;
+  color: white;
+  border-radius: 25px;
 }
 
 button:hover {
-  color: white;
   cursor: pointer;
-  background: gray;
+  color: black;
+  background: white;
 }
 
-.red {
-  color: red;
+.name {
+  margin: 25px;
 }
 
-.margin {
-  margin: 0 25px;
+.middle {
+  width: 250px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  border-radius: 50%;
+  border: solid black;
+}
+
+.finished .player {
+  border: solid black;
+  width: auto;
+  margin: 25px 15px;
+}
+
+.finished {
+  margin-top: 200px;
 }
